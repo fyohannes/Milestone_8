@@ -1,5 +1,5 @@
 ---
-title: "Milestone_8"
+title: "Replication Paper"
 author: "Feven Yohannes"
 date: "April 20, 2020"
 output: html_document
@@ -125,16 +125,21 @@ differences in the distribution of outcomes"(Kuipers,2009,6). The placebo test c
 
 # Literature Review 
 
- 	As previously mentioned, this paper focuses on the effects the female policymakers and legislations have on IPV opinions. In his paper, Kuipers introduces other countries in which the relationship between female representation in government and attitudes towards IPV (intimate partner violence) is significant. For example, he refers to a paper titled “ Powerful Women: Does Exposure Reduce Bias?” by Beaman et al. (2009). This paper is a case analysis on Indian village councils and similarly to Kuipers’ paper, it examines the effect the female leaders can have on changing perceptions about female capacity and gender roles. In this paper, India saw that an increase in female representation led to weakened gender stereotypes in the domestic sphere and well as the political arena. Although attitudes on male leaders did not change, this paper shows a change in attitude towards female leaders, most notably the perspective of the effectiveness and capacity of female politicians, all contributing to the weakening of gender stereotypes. The theory and findings within this paper greatly tie to the research question presented in Kuipers’ paper. Both papers analyze the impact that female candidates can have on attitudes related to women’s rights and gender norms.
+$$\text{
+ 	As previously mentioned, this paper focuses on the effects that female policymakers and legislations have on IPV opinions. In his paper, Kuipers introduces other countries in which the relationship between female representation in government and attitudes towards IPV (intimate partner violence) is significant. For example, he refers to a paper titled “Powerful Women: Does Exposure Reduce Bias?” by Beaman et al. (2009). This paper is a case analysis on Indian village councils and similarly to Kuipers’ paper, it examines the effect the female leaders can have on changing perceptions about female capacity and gender roles. In this paper, India saw that an increase in female representation led to weakened gender stereotypes in the domestic sphere and well as the political arena. Although attitudes on male leaders did not change, this paper shows a change in attitude towards female leaders, most notably the perspective of the effectiveness and capacity of female politicians, all contributing to the weakening of gender stereotypes. The theory and findings within this paper greatly tie to the research question presented in Kuipers’ paper. Both papers analyze the impact that female candidates can have on attitudes related to women’s rights and gender norms.
  	These theories are not only present in the aforementioned papers, but the same themes are present in a working paper conducted by the United Nations called “Maternal Mortality and Women’s Political Participation”. This working paper examines the relationship between quotas for women in parliament and the effect it has on the decline in maternal mortality across multiple nations. The paper highlighted how maternal mortality fell at a faster rate for countries that had instituted gender quota in their parliament. In conclusion, this paper finds that women's involvement in policy-making, not country income or advances in medical technology, is the greatest factor for rapid maternal mortality decline. 
-  All three papers highlight the importance of female politicians on pertinent issues such as maternal mortality or domestic abuse. Thus, these papers emphasize the effect that women politicians have on breaking stereotypes and how they are more efficient in dealing with female health and wellness issues. Placing the United Nations working paper and the paper conducted by Beaman et al, they help reinforce the theory that is found in Kuiper’s paper.
+  All three papers highlight the importance of female politicians on pertinent issues such as maternal mortality or domestic abuse. Thus, these papers emphasize the effect that women politicians have on breaking stereotypes and how they are more efficient in dealing with female health and wellness issues. By placing the United Nations working paper and the paper conducted by Beaman et al, they help reinforce the theory that is found in Kuiper’s paper.
+}$$
   
 # Replication:
+
   In my replication project, I replicated the three main models of the paper. The first model looked at the effect of female incumbency on IPV attitudes on female constiutents. The second model looked at the effect of female incumbency on IPV attitudes of male constituents. The third model was a placebo test that predicted the effect of female incumbency on pre-treatment attitudes for both male and female constituents. In my replication, I found all of my results to be consistent with the results of the original paper. Any discrepencies that occured was most likely due to natural error that occurs when re-running the original code. Thus, any discrepencies with the estimates of the coefficents from the models were non-significant and only accumulated to a couple of percenatge points. 
   
 
-Extension:
+#Extension:
+<div align="center">
 ```{r,extension for table1,results="asis", warning=FALSE,message=FALSE}
+
 
 # I set my seed all the numbers of my results stay the same
 
@@ -232,6 +237,8 @@ model7_check
 
 ```
 
+  
+
 ```{r,extension for table2,results="asis",warning=FALSE}
 
 set.seed(9)
@@ -290,6 +297,7 @@ model7_check_male
 #graphic2 <- grid.arrange(model1_check_male,model2_check_male,model3_check_male,model4_check_male,model5_check_male,model7_check_male,ncol= 3, top="Posterior Predictive Checking for Male Constitutent Results ")
 
 ```
+</div> 
 
 For my extension, I focused on re-creating the original regressions through a Bayesian model rather than a standard linear regression. A Bayesian regression, unlike the standard linear regression that reflects Frequentist thought, examines the predicitive probability and sampling of posterior probability distribution. This distribution intergrates priors into the modeling and thus change the distribution of our posterior probaility. I used this Bayesian method and ran two models from the main results of the paper. The first was the model that predicted female attitude changes on IPV public opinion. The second was a similiar model that predicted male attitudes on IPV public opinion. These new models used the Bayesian inference for linear modeling and thus included regularizing piors on the model parameters. 
 
@@ -302,9 +310,6 @@ In my first model, the model that predicited the change in female IPV opinions, 
 Similiar to the first model that predicted the change in IPV opions, the second model predicted the change in IPV opinions for male constitutents. I also ran a Bayesian regression on the second model and generally found the estimates for the the coefficents of female incumbency on each dependent variable to be consistent with the original paper. Looking at the index specifically, we see that the esitmate for the consant and Female Incumbency coefficent is O.406 and -0.133 respecitvely in the original paper. In my regression I found the consant to be 0.401 and the coefficent for Female incumbency to be -0.124. Thus, these the two ouputs are quite similiar and consistent. Overall, the two Bayesian models seemed to be consistent with the results of the standard linear models. This tells us that ....
 
 In addition to the Bayesian models that I created, I also ran a posterior predictive check on the Bayesian regressions for both the models that predicted the change in female and male attitudes. The graphics that I have shown below represent these posterior predictive checkings, a method that simulates replicated data and compares it to the orginal data. Each graph compares the simulated data which is donoted as yrep and has a light blue color, with the orginal data which is donoted as y and has a dark blue color. When running the posterior predictive check on the regressions that predicted female public opinion, we can see that both fitted lines are quite similiar. This suggests that the model that we have is a pretty good fit for our data. However, when running the posterior predicitve check on regressions that predicted male public opinion, we can see that that fitted lines have more variance and at times don't follow the same pattern. This is specifally true for regressions that predicted male opinions from the third, fourth, and fifth dependent variable. This outcome is in line with the results of the data, as the paper stated that the regressions for males showed less signifcant results, thus hinting that the model for male constituents are not a great fit for the data. 
-
-
-
 
 
 # Tables and Figures:
@@ -353,9 +358,10 @@ table <- list(mod_fem1, mod_fem2, mod_fem3, mod_fem4, mod_fem5, mod_fem7)
 note_text <- paste("Beta coefficients from OLS regression. Standard errors were calculated using the huber-white (HC0) correction. The outcomes are drawn from a battery of questions that asked respondents if it was acceptable to beat one's wife if she: (1) goes out without telling her husband; (2) neglects her children; (3) argues with her husband; (4) refuses sex; (5) burns the food. The index is an additive measure.")
 
 #Used stargazer to make the table
+#Included header equals false
 
 table = stargazer(table,
-                  title = "Effect of Female Incumbency on Female Attitudes Towards IPV", 
+                  title = "Effect of Female Incumbency on Female Attitudes Towards IPV", header=FALSE,
                   label = 'tab:table_female',
                   model.names = F,
                   model.numbers = T,
@@ -385,7 +391,7 @@ mod_mal4 <- lm(v744d_m2012 ~ woman_win, data = constituency_data)
 mod_mal5 <- lm(v744e_m2012 ~ woman_win, data = constituency_data)
 mod_mal7 <- lm(add_index_m2012 ~ woman_win, data = constituency_data)
 
-observations <- c(nobs(mod_mal1),nobs(mod_mal2),nobs(mod_mal3),nobs(mod_mal4),nobs(mod_mal5),nobs(mod_mal7))
+observations2 <- c(nobs(mod_mal1),nobs(mod_mal2),nobs(mod_mal3),nobs(mod_mal4),nobs(mod_mal5),nobs(mod_mal7))
 
 mod_mal1 <- coeftest(mod_mal1, vcov=vcovHC(mod_mal1,type="HC0"))
 mod_mal2 <- coeftest(mod_mal2, vcov=vcovHC(mod_mal2,type="HC0"))
@@ -394,21 +400,22 @@ mod_mal4 <- coeftest(mod_mal4, vcov=vcovHC(mod_mal4,type="HC0"))
 mod_mal5 <- coeftest(mod_mal5, vcov=vcovHC(mod_mal5,type="HC0"))
 mod_mal7 <- coeftest(mod_mal7, vcov=vcovHC(mod_mal7,type="HC0"))
 
-table <- list(mod_mal1, mod_mal2, mod_mal3, mod_mal4, mod_mal5, mod_mal7)
+table2 <- list(mod_mal1, mod_mal2, mod_mal3, mod_mal4, mod_mal5, mod_mal7)
 
 note_text <- paste("Beta coefficients from OLS regression. Standard errors were calculated using the huber-white (HC0) correction. The outcomes are drawn from a battery of questions that asked respondents if it was acceptable to beat one’s wife if she: (1) goes out without telling her husband; (2) neglects her children; (3) argues with her husband; (4) refuses sex; (5) burns the food. The index is an additive measure.")
 
-table2 = stargazer(table,
+table2 = stargazer(table2,
                   title = "Effect of Female Incumbency on Male Attitudes Towards IPV",
                   label = 'tab:table_male',
                   model.names = F,
                   model.numbers = T,
                   #column.separate = c(6),
+                  header=FALSE,
                   column.labels = c("Goes out", "Neglects children", "Argues", "Refuses sex", "Burns food", "Index"),
                   
                   multicolumn = T,
                   dep.var.labels = c("Is it okay to beat one's wife if she:"), 
-                  add.lines = list(c("Observations", observations),
+                  add.lines = list(c("Observations", observations2),
                                    c('Bandwidth', rep(c('1\\%'), 6))),
                   covariate.labels = c("Female Incumbency"),
                   star.cutoffs = c(0.05, 0.01),
@@ -431,7 +438,7 @@ mod2007_fem4 <- lm(v744d_f2007 ~ woman_win, data = constituency_data)
 mod2007_fem5 <- lm(v744e_f2007 ~ woman_win, data = constituency_data)
 mod2007_fem7 <- lm(add_index_f2007 ~ woman_win, data = constituency_data)
 
-observations <- c(nobs(mod2007_fem1),nobs(mod2007_fem2),nobs(mod2007_fem3),
+observations3 <- c(nobs(mod2007_fem1),nobs(mod2007_fem2),nobs(mod2007_fem3),
                   nobs(mod2007_fem4),nobs(mod2007_fem5),nobs(mod2007_fem7))
 
 
@@ -452,7 +459,7 @@ mod2007_mal4 <- lm(v744d_m2007 ~ woman_win, data = constituency_data)
 mod2007_mal5 <- lm(v744e_m2007 ~ woman_win, data = constituency_data)
 mod2007_mal7 <- lm(add_index_m2007 ~ woman_win, data = constituency_data)
 
-observations_male <- c(nobs(mod2007_mal1),nobs(mod2007_mal2),nobs(mod2007_mal3),
+observations3_male <- c(nobs(mod2007_mal1),nobs(mod2007_mal2),nobs(mod2007_mal3),
                        nobs(mod2007_mal4),nobs(mod2007_mal5),nobs(mod2007_mal7))
 
 
@@ -464,20 +471,21 @@ mod2007_mal5 <- coeftest(mod2007_mal5, vcov=vcovHC(mod2007_mal5,type="HC0"))
 mod2007_mal7 <- coeftest(mod2007_mal7, vcov=vcovHC(mod2007_mal7,type="HC0"))
 
 
-table_3a <- list(mod2007_fem1, mod2007_mal1, mod2007_fem2, mod2007_mal2, mod2007_fem3, mod2007_mal3, 
+table3a <- list(mod2007_fem1, mod2007_mal1, mod2007_fem2, mod2007_mal2, mod2007_fem3, mod2007_mal3, 
               mod2007_fem4, mod2007_mal4, mod2007_fem5, mod2007_mal5)
 
 note_text <- paste(" Beta coefficients from OLS regression. Decimals rounded to two digits to maintain alignment. Standard errors were calculated using the huber-white (HC0) correction. The outcomes are drawn from a battery of questions that asked respondents if it was acceptable to beat one's wife if she: (1) goes out without telling her husband; (2) neglects her children; (3) argues with her husband; (4) refuses sex; (5) burns the food. The index is an additive measure.")
 
 # I named this next table 3a1 because it seemts like its using the moedels from table 3a
 
-table_3a1 = stargazer(table,
+table3a = stargazer(table3a,
                   title = "Effect of Female Incumbency on Pre-treatment Attitudes Towards IPV (Placebo Test)",
                   label = 'tab:placebo',
                   model.names = F,
                   model.numbers = T,
                   #column.separate = c(6),
                   column.separate = c(2,2,2,2,2,2),
+                  header=FALSE,
                   column.labels = c("Goes out", "Neglects children", "Argues", "Refuses sex", "Burns food", "Index"),
                   
                   multicolumn = T,
@@ -550,9 +558,6 @@ p10
 
 ```
 
-
-
-
 #Appendix:
 
 ```{r, appendix, results="asis"}
@@ -595,7 +600,7 @@ note_text <- paste("Beta coefficients from OLS regression. Standard errors were 
 #Used stargazer to make the table
 
 table = stargazer(table,
-                  title = "Effect of Female Incumbency on Female Attitudes Towards IPV", 
+                  title = "Effect of Female Incumbency on Female Attitudes Towards IPV", header=FALSE,
                   label = 'tab:table_female',
                   model.names = F,
                   model.numbers = T,
@@ -625,7 +630,7 @@ mod_mal4 <- lm(v744d_m2012 ~ woman_win, data = constituency_data)
 mod_mal5 <- lm(v744e_m2012 ~ woman_win, data = constituency_data)
 mod_mal7 <- lm(add_index_m2012 ~ woman_win, data = constituency_data)
 
-observations <- c(nobs(mod_mal1),nobs(mod_mal2),nobs(mod_mal3),nobs(mod_mal4),nobs(mod_mal5),nobs(mod_mal7))
+observations2 <- c(nobs(mod_mal1),nobs(mod_mal2),nobs(mod_mal3),nobs(mod_mal4),nobs(mod_mal5),nobs(mod_mal7))
 
 #vcov returns a variance covariance matrix for the coefficents in the model
 #the type argument indicates 
@@ -638,11 +643,11 @@ mod_mal4 <- coeftest(mod_mal4, vcov=vcovHC(mod_mal4,type="HC0"))
 mod_mal5 <- coeftest(mod_mal5, vcov=vcovHC(mod_mal5,type="HC0"))
 mod_mal7 <- coeftest(mod_mal7, vcov=vcovHC(mod_mal7,type="HC0"))
 
-table <- list(mod_mal1, mod_mal2, mod_mal3, mod_mal4, mod_mal5, mod_mal7)
+table2 <- list(mod_mal1, mod_mal2, mod_mal3, mod_mal4, mod_mal5, mod_mal7)
 
 note_text <- paste("Beta coefficients from OLS regression. Standard errors were calculated using the huber-white (HC0) correction. The outcomes are drawn from a battery of questions that asked respondents if it was acceptable to beat one’s wife if she: (1) goes out without telling her husband; (2) neglects her children; (3) argues with her husband; (4) refuses sex; (5) burns the food. The index is an additive measure.")
 
-table2 = stargazer(table,
+table2 = stargazer(table2,
                   title = "Effect of Female Incumbency on Male Attitudes Towards IPV",
                   label = 'tab:table_male',
                   model.names = F,
@@ -652,7 +657,7 @@ table2 = stargazer(table,
                   
                   multicolumn = T,
                   dep.var.labels = c("Is it okay to beat one's wife if she:"), 
-                  add.lines = list(c("Observations", observations),
+                  add.lines = list(c("Observations", observations2),
                                    c('Bandwidth', rep(c('1\\%'), 6))),
                   covariate.labels = c("Female Incumbency"),
                   star.cutoffs = c(0.05, 0.01),
@@ -675,7 +680,7 @@ mod2007_fem4 <- lm(v744d_f2007 ~ woman_win, data = constituency_data)
 mod2007_fem5 <- lm(v744e_f2007 ~ woman_win, data = constituency_data)
 mod2007_fem7 <- lm(add_index_f2007 ~ woman_win, data = constituency_data)
 
-observations <- c(nobs(mod2007_fem1),nobs(mod2007_fem2),nobs(mod2007_fem3),
+observations3 <- c(nobs(mod2007_fem1),nobs(mod2007_fem2),nobs(mod2007_fem3),
                   nobs(mod2007_fem4),nobs(mod2007_fem5),nobs(mod2007_fem7))
 
 
@@ -708,16 +713,17 @@ mod2007_mal5 <- coeftest(mod2007_mal5, vcov=vcovHC(mod2007_mal5,type="HC0"))
 mod2007_mal7 <- coeftest(mod2007_mal7, vcov=vcovHC(mod2007_mal7,type="HC0"))
 
 
-table_3a <- list(mod2007_fem1, mod2007_mal1, mod2007_fem2, mod2007_mal2, mod2007_fem3, mod2007_mal3, 
+table3a <- list(mod2007_fem1, mod2007_mal1, mod2007_fem2, mod2007_mal2, mod2007_fem3, mod2007_mal3, 
               mod2007_fem4, mod2007_mal4, mod2007_fem5, mod2007_mal5)
 
 note_text <- paste(" Beta coefficients from OLS regression. Decimals rounded to two digits to maintain alignment. Standard errors were calculated using the huber-white (HC0) correction. The outcomes are drawn from a battery of questions that asked respondents if it was acceptable to beat one's wife if she: (1) goes out without telling her husband; (2) neglects her children; (3) argues with her husband; (4) refuses sex; (5) burns the food. The index is an additive measure.")
 
 #I named this next table 3a1 because it seemts like its using the moedels from table 3a
 
-table_3a1 = stargazer(table,
+table3a = stargazer(table3a,
                   title = "Effect of Female Incumbency on Pre-treatment Attitudes Towards IPV (Placebo Test)",
                   label = 'tab:placebo',
+                  header=FALSE,
                   model.names = F,
                   model.numbers = T,
                   #column.separate = c(6),
@@ -738,14 +744,14 @@ table_3a1 = stargazer(table,
                   notes.align = 'l')
 
 
-table_3b <- list(mod2007_fem1, mod2007_mal1, mod2007_fem2, mod2007_mal2, mod2007_fem3, mod2007_mal3, 
+table3b <- list(mod2007_fem1, mod2007_mal1, mod2007_fem2, mod2007_mal2, mod2007_fem3, mod2007_mal3, 
               mod2007_fem4, mod2007_mal4, mod2007_fem5, mod2007_mal5, mod2007_fem7, mod2007_mal7)
 
 note_text <- paste(" Beta coefficients from OLS regression. Decimals rounded to two digits to maintain alignment. Heteroskedastic consistent standard errors were calculated using the huber-white (HC0) correction. The outcomes are drawn from a battery of questions that asked respondents if it was acceptable to beat one's wife if she: (1) goes out without telling her husband; (2) neglects her children; (3) argues with her husband; (4) refuses sex; (5) burns the food. The index is an additive measure.")
 
 #This next table is using information from the table above
 
-table_3b1 = stargazer(table,
+table3b = stargazer(table3b,
                   title = "Effect of Female Incumbency on Pre-treatment Female Support for IPV (Placebo Test)",
                   label = 'tab:placebo_full',
                   model.names = F,
@@ -776,6 +782,7 @@ table_3b1 = stargazer(table,
 
 table_a3 = stargazer(constituency_data, 
                   title = "Descriptive Statistics (Female Respondent Outcomes)",
+                  header=FALSE,
                   label = 'tab:dso',
                   summary = T,
                   keep = c(7, 8, 9, 10, 11, 12),
@@ -791,6 +798,7 @@ table_a3 = stargazer(constituency_data,
 table_a3_2 = stargazer(constituency_data,
                   title = "Descriptive Statistics (Male Respondent Outcomes)",
                   label = 'tab:dso_male',
+                  header=FALSE,
                   summary = T,
                   keep = c(25, 26, 27, 28, 29, 30),
                   covariate.labels = c("Goes out", "Neglects children", "Argues", "Refuses sex", "Burns food", "Additive index")
@@ -815,4 +823,4 @@ table_a3_2 = stargazer(constituency_data,
   I succesfully replicated Kuipers results, except for minor discrepancies which do not affect his conclusions. I replicated the paper in R programming, and I was able to derive similiar values for my regressions, which also showed significant values especially for dependent variables in the regression specific to female constituents.
 Thus, my replicated models showed that the addition of female legislators seem to have an effect on decreasing sentiments that tolerate IPV, leading to opinions that increasily condem IPV. 
   I further investiagted these results through an extension that conducted these same models through a Bayesian framework rather than a standard linear model. When conducting my Bayesian regressions on the two main models, I generally found the results to be consistent with the original results found in the paper. When comparing the indexes of the model that predicted change in IPV attitudes for both male and female constituents, I found the estimates for the Female Incumbency coefficent and intercepts to be fairly similiar. Thus, I found little discrepencies between the Bayesian regressions and standard linear regressions. In additon to comparing the estimates, I also ran a posterior predictive check with the Bayesian regressions to examine how well both index models fit the data. The posterior predictive check highlighted how the model that predicted the change in IPV opinions for female constitutents was a better fit than the model specific to male constitutents. Thus, from this we can infer that the addition of a female legislator has a larger effect on female constituents than male constitutents. Thus, this leads me to ask what should be done to increase more condemnation of IPV for male constituents? 
-  The effect 
+  While the answer to this question is beyond the scope of this paper, it is something interesting to consider. The results of the paper show that in large, female legislators do have an effect on community wide IPV opinions. They on average seem to put women's issues on the forefront of their politics, thus leading to more enaction of legislation that condemns IPV and helps victims of IPV. This acknowledgement is quite important as it highlights how attitudes of IPV can change for the better. While this is very important, it's also necessary to note that the problem most likely will not be solved by the election of female legislators alone. Even if female legislators to enact important laws that condemn IPV, there must be more political action that condemns IPV, for both male and female legislators alike. Thus, while the results of this paper highlights the benefits that female legislators have and the importance of IPV in one's community, it also highlights the need for more political action.
