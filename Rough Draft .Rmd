@@ -799,31 +799,6 @@ table3b = stargazer(table3b,
 
 
 
-table_a3 = stargazer(constituency_data, 
-                  title = "Descriptive Statistics (Female Respondent Outcomes)",
-                  header=FALSE,
-                  label = 'tab:dso',
-                  summary = T,
-                  keep = c(7, 8, 9, 10, 11, 12),
-                  covariate.labels = c("Goes out", "Neglects children", "Argues", "Refuses sex", "Burns food", "Additive index")
-                  )
-
-# I took out this write latex part bc my latex doesn't work
-# write_latex_plain(table, note_text, './outputs/tables/descriptives_outcomes.tex')
-
-#note_text <- paste("")
-
-
-table_a3_2 = stargazer(constituency_data,
-                  title = "Descriptive Statistics (Male Respondent Outcomes)",
-                  label = 'tab:dso_male',
-                  header=FALSE,
-                  summary = T,
-                  keep = c(25, 26, 27, 28, 29, 30),
-                  covariate.labels = c("Goes out", "Neglects children", "Argues", "Refuses sex", "Burns food", "Additive index")
-)
-
-
 #  write_latex_plain(table, note_text, './outputs/tables/descriptives_outcomes_male.tex')
 
 
