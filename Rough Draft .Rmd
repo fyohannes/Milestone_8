@@ -340,6 +340,7 @@ In my first model, the model that predicted the change in female IPV opinions, t
 # Tables and Figures:
 
 ```{r,tables and figures, results="asis"}
+
 # Replication code for table 1
 
 # This next line of code filters for the constitutency data so we only look at regions where females win by a margin of 1 percent or less
@@ -817,11 +818,19 @@ Results from Kuipers (2019) were successfully replicated. As an example, here is
 
 ```{r, appendix, results="asis",}
 
-# Replication code for table 1 that I will show in my pdf
+# Replication code for table 1
+
+# This next line of code filters for the constitutency data so we only look at regions where females win by a margin of 1 percent or less
+
+
+# This filtering will be used by all the models and tables throughout the paper
+
+constituency_data <- constituency_data[abs(constituency_data$win_margin) < 0.01,]
+
+
+
 
 # These fitted lines model the relationship between female incumbency and public opinions on 5 questions. These five questions incude 1)Is it okay to beat one's wife if she goes out?  2)Is it okay to beat one's wife if she neglects the kids?  3)Is it okay to beat one's wife if she argues? 4)Is it okay to beat one's wife if she refuses food ? 5) Is it okay to beat one's wife if she burns food?
-
-# Running a standard linear regression
 
 mod_fem1 <- lm(v744a_f2012 ~ woman_win, data = constituency_data)
 mod_fem2 <- lm(v744b_f2012 ~ woman_win, data = constituency_data)
@@ -847,15 +856,15 @@ mod_fem5 <- coeftest(mod_fem5, vcov=vcovHC(mod_fem5,type="HC0"))
 mod_fem7 <- coeftest(mod_fem7, vcov=vcovHC(mod_fem7,type="HC0"))
 
 # Made the models with their respective coefficents into a table 
-# Table is made up of the models and their respective coeftests
 
-table_appendix <- list(mod_fem1, mod_fem2, mod_fem3, mod_fem4, mod_fem5, mod_fem7)
+table <- list(mod_fem1, mod_fem2, mod_fem3, mod_fem4, mod_fem5, mod_fem7)
 
 note_text <- paste("Beta coefficients from OLS regression. Standard errors were calculated using the huber-white (HC0) correction. The outcomes are drawn from a battery of questions that asked respondents if it was acceptable to beat one's wife if she: (1) goes out without telling her husband; (2) neglects her children; (3) argues with her husband; (4) refuses sex; (5) burns the food. The index is an additive measure.")
 
 # Used stargazer to make the table
+# Included header equals false
 
-table_appendix = stargazer(table_appendix,
+table = stargazer(table,
                   title = "Effect of Female Incumbency on Female Attitudes Towards IPV", header=FALSE,
                   label = 'tab:table_female',
                   model.names = F,
