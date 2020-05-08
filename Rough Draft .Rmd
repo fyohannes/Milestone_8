@@ -2,10 +2,7 @@
 title: "Replication Paper"
 author: "Feven Yohannes"
 date: "April 20, 2020"
-header-includes:
-    - \usepackage{setspace}\doublespacing
 output: html_document
-bibliography: bibliography.bib
 link_citations: true
 ---
 
@@ -119,7 +116,7 @@ public_opinion_individual_data  <- read_csv("dataverse_files/replication_file_jo
 
   My project replicates data from Kuipers' "The Effect of Electing Female Candidates on Attitudes Towards Intimate Partner Violence". In this paper, Kuipers investigates the relationship between the election of female candidates and the change in IPV (intimate partner violence) opinions. He creates two models that predict the change in IPV opinions with the predictor variable of an additional female legislator. The first model looks at female constituents, while the second examines male constituents. His models show statistically significant results for female constituents, thus showing that the addition of female legislators does have some impact on IPV opinions for female constituents. After examining these models, Kuipers goes on to explain possible reasons for the impact that female legislators could have. One reason includes allocating more resources to health centers that in turn could impact IPV opinions through awareness and appropriate resources for victims. This finding is particularly important as it demonstrates how female legislators can have a unique impact on women's issues. This idea that female legislators have an impact on reducing IPV has also been explored by other authors as Kuipers mentions. In a study conducted in India, @Iyer et al (2012) female victims were most likely to report their abuse in the 1990s, following the implementation of gender quotas in the legislature. Furthermore, this is also consistent with a study conducted in Rwanda, where @Burnet (2011) found that the increase in female legislators led to the enaction of a law that specifically targeted prohibiting gender violence. In conjunction with Kuipers' paper, both pieces of literature outline the possible effect that an increase in female legislators can have on IPV and thus, reveal the significance of female legislators on women's issues and health.
   
-  In my replication paper, I use R programming to replicate the modeling through the use of data and code that was made available on Dataverse ^ [https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MPBGXL]. In order to replicate the tables and figures featured in the paper, I downloaded all of the available data and ran the same exact codes that were originally used. The replication of these models can be found here ^[All analysis for this paper can be found on this repo link: https://github.com/fyohannes/Milestone_8].
+  In my replication paper, I use R programming to replicate the modeling through the use of data and code that was made available on Dataverse  ^[https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MPBGXL]. In order to replicate the tables and figures featured in the paper, I downloaded all of the available data and ran the same exact codes that were originally used. The replication of these models can be found here ^[All analysis for this paper can be found on this repo link: https://github.com/fyohannes/Milestone_8].
   
   Through my replication, I found results that were consistent with the findings of the original paper. I specifically focused on the main results of the paper that showed the relationship between the election of female candidates and IPV opinions. The first model examined the relationship between the election of a female candidate and the change in female attitudes from 2009 (before the election of a female candidate) and 2012 (three years after the election of a female candidate) on multiple questions related to IPV. The first table displayed the coefficients, p values. and standard errors of the respective coefficients from the first model that explored female candidates and change in IPV opinions on a variety of questions. These five questions include 1) Is it okay to beat one's wife if she goes out? 2)Is it okay to beat one's wife if she neglects the kids? 3)Is it okay to beat one's wife if she argues? 4)Is it okay to beat one's wife if she refuses food? 5) Is it okay to beat one's wife if she burns food? The fitted models show that female respondents are more likely to have attitudes that condemn IPV. For example, “the proportion of female respondents stating that it is acceptable to beat one’s wife if she burns the food drops by 3.2 percentage points”(Kuipers 6). These results are generally consistent with all five questions. Furthermore, the index of the first model, which is an aggregation of all five questions, shows a decrease of 2 percentage points, thus showing that the election of a female candidate did lead to more condemnation of intimate partner violence for female constituents.
   
@@ -251,7 +248,7 @@ model7_check
 
   
 
-```{r,extension for table2,results="asis",warning=FALSE}
+```{r,extension for table2, results="asis",warning=FALSE}
 
 set.seed(9)
 
@@ -309,7 +306,7 @@ plot.caption = element_text(size = 8, face = "italic"))
 
 model7_check_male
 
-#graphic2 <- grid.arrange(model1_check_male,model2_check_male,model3_check_male,model4_check_male,model5_check_male,model7_check_male,ncol= 3, top="Posterior Predictive Checking for Male Constitutent Results ")
+# graphic2 <- grid.arrange(model1_check_male,model2_check_male,model3_check_male,model4_check_male,model5_check_male,model7_check_male,ncol= 3, top="Posterior Predictive Checking for Male Constitutent Results ")
 
 ```
 </div> 
@@ -576,6 +573,7 @@ p10
 
 ```
 
+
 # Appendix:
 
 ```{r, appendix, results="asis"}
@@ -808,8 +806,8 @@ table_a3 = stargazer(constituency_data,
                   covariate.labels = c("Goes out", "Neglects children", "Argues", "Refuses sex", "Burns food", "Additive index")
                   )
 
-#I took out this write latex part bc my latex doesn't work
-#write_latex_plain(table, note_text, './outputs/tables/descriptives_outcomes.tex')
+# I took out this write latex part bc my latex doesn't work
+# write_latex_plain(table, note_text, './outputs/tables/descriptives_outcomes.tex')
 
 #note_text <- paste("")
 
@@ -824,7 +822,7 @@ table_a3_2 = stargazer(constituency_data,
 )
 
 
-# write_latex_plain(table, note_text, './outputs/tables/descriptives_outcomes_male.tex')
+#  write_latex_plain(table, note_text, './outputs/tables/descriptives_outcomes_male.tex')
 
 
 
