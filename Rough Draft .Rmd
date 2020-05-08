@@ -7,7 +7,7 @@ output:
   html_document: default
 link_citations: yes
 header-includes: \usepackage{setspace}\doublespacing
-bibliography: bibs.bib
+bibliography: bib.bib
 ---
 
 ```{r setup, include=FALSE,message=FALSE, warning=FALSE}
@@ -812,7 +812,7 @@ table3b = stargazer(table3b,
 
 Results from Kuipers (2019) were successfully replicated. As an example, here is Table 1 from page 5. You can find the code for my replication here ^[https://github.com/fyohannes/Milestone_8].
 
-![Original Table in Paper I am replicating](/Home/Downloads/Gov1006/Milestones/Milestone_8/table1.png)
+![Original Table in Paper I am replicating](table1.png)
 
 
 ```{r, appendix, results="asis",}
@@ -849,13 +849,13 @@ mod_fem7 <- coeftest(mod_fem7, vcov=vcovHC(mod_fem7,type="HC0"))
 # Made the models with their respective coefficents into a table 
 # Table is made up of the models and their respective coeftests
 
-table <- list(mod_fem1, mod_fem2, mod_fem3, mod_fem4, mod_fem5, mod_fem7)
+table_appendix <- list(mod_fem1, mod_fem2, mod_fem3, mod_fem4, mod_fem5, mod_fem7)
 
 note_text <- paste("Beta coefficients from OLS regression. Standard errors were calculated using the huber-white (HC0) correction. The outcomes are drawn from a battery of questions that asked respondents if it was acceptable to beat one's wife if she: (1) goes out without telling her husband; (2) neglects her children; (3) argues with her husband; (4) refuses sex; (5) burns the food. The index is an additive measure.")
 
 # Used stargazer to make the table
 
-table = stargazer(table,
+table_appendix = stargazer(table_appendix,
                   title = "Effect of Female Incumbency on Female Attitudes Towards IPV", header=FALSE,
                   label = 'tab:table_female',
                   model.names = F,
