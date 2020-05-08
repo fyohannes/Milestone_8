@@ -565,7 +565,7 @@ p10
 
 # Appendix:
 
-```{r, appendix, results="asis",include=FALSE}
+```{r, appendix, results="asis"}
 
 # Replication code for table 1
 
