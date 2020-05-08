@@ -2,7 +2,11 @@
 title: "Replication Paper"
 author: "Feven Yohannes"
 date: "April 20, 2020"
+header-includes:
+    - \usepackage{setspace}\doublespacing
 output: html_document
+bibliography: bibliograpphy.bib
+link_citations: true
 ---
 
 ```{r setup, include=FALSE,message=FALSE, warning=FALSE}
